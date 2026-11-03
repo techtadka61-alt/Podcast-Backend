@@ -1,0 +1,43 @@
+{
+  "name": "@article-portal/backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Article portal REST API (Express + PostgreSQL + Redis)",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx watch --env-file=.env src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "seed": "tsx --env-file=.env src/scripts/seed.ts",
+    "seed:prod": "node dist/scripts/seed.js",
+    "indexes": "tsx --env-file=.env src/scripts/indexes.ts",
+    "indexes:prod": "node dist/scripts/indexes.js"
+  },
+  "dependencies": {
+    "argon2": "^0.44.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.11.4",
+    "multer": "^2.0.2",
+    "pino": "^10.0.0",
+    "pino-http": "^11.0.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^22.18.0",
+    "pino-pretty": "^13.1.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.2",
+    "vitest": "^5.1.0"
+  }
+}
